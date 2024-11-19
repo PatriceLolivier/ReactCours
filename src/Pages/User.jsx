@@ -29,6 +29,9 @@ export function User() {
     };
 
     if (id) fetchUser();
+    return () => {
+      setUser(null);
+    }
   }, [id]);
 
   const handleSubmit = (e) => {
@@ -40,7 +43,7 @@ export function User() {
 
   if (!user)
     return (
-      <div className="mt-4 flex items-center justify-center">
+      <div className="mt-4 flex flex-col items-center justify-center">
         {error && <div className="text-red-500 mb-4">{error}</div>}
         <form onSubmit={handleSubmit}>
           <label className="text-lg font-bold">
@@ -68,6 +71,7 @@ export function User() {
         <p>Prénom : {user.firstname}</p>
         <p>Nom : {user.lastname}</p>
         <p>Email : {user.email}</p>
+        <p>Téléphone : {user.phone}</p>
       </div>
     </div>
   );

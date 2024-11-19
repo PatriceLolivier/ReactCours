@@ -28,7 +28,7 @@ export function Users() {
         <h1 className="mb-2 font-bold">Liste des emails des utilisateurs :</h1>
         <ul className="m-2">
             { users.map((user) => (
-                <li key={user.id}>{ user.email }</li>
+                <li key={user.id}> { user.email }</li>
             ))}
         </ul>
     </div>)
