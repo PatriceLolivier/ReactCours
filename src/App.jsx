@@ -3,10 +3,12 @@ import { Navbar } from "./components/Navbar/Navbar"
 import { Home } from "./Pages/Home"
 import { Users } from "./Pages/Users"
 import { User } from "./Pages/User"
+import { DarkModeProvider } from "./components/DarkMode/DarkMode"
 
 export function App() {
     return (
-        <BrowserRouter>
+        <DarkModeProvider>
+          <BrowserRouter>
             <Navbar />
             <Routes>
                 <Route path="/" Component={Home} />
@@ -14,6 +16,7 @@ export function App() {
                 <Route path="user" Component={User}/>    
                 <Route path="/user/:id" Component={User} />
             </Routes>
-        </BrowserRouter>
+          </BrowserRouter>
+        </DarkModeProvider>
     )
 }

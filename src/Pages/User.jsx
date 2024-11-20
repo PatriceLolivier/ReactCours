@@ -43,16 +43,18 @@ export function User() {
 
   if (!user)
     return (
-      <div className="mt-4 flex flex-col items-center justify-center">
+      <div className="min-h-screen flex flex-col dark:bg-gray-800 dark:text-white">
         {error && <div className="text-red-500 mb-4">{error}</div>}
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}
+        className="flex items-center justify-center mt-4"
+        >
           <label className="text-lg font-bold">
             Id souhaité:
             <input 
               type="number" 
               value={inputId}
               onChange={(e) => setInputId(e.target.value)}
-              className="border-2 border-gray-300 rounded-md p-1 ml-2" 
+              className="border-2 border-gray-300 rounded-md p-1 ml-2 text-black" 
             />
           </label>
           <input 
@@ -65,8 +67,8 @@ export function User() {
     );
 
   return (
-    <div className="mt-4 flex justify-center flex-col items-center">
-      <div className="border-2 border-blue-300 rounded-md p-4">
+    <div className="min-h-screen flex justify-center items-center dark:bg-gray-800 dark:text-white">
+      <div className="border-2 mt-4 border-blue-300 rounded-md p-4 dark:border-blue-500 dark:bg-gray-700">
         <h2>User : {id}</h2>
         <p>Prénom : {user.firstname}</p>
         <p>Nom : {user.lastname}</p>
